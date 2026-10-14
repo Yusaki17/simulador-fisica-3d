@@ -1,0 +1,65 @@
+/* style.css */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { margin: 0; overflow: hidden; background: #111; color: white; font-family: 'Segoe UI', sans-serif; }
+.hidden { display: none !important; }
+
+/* Menú Principal */
+#main-menu {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    display: flex; flex-direction: column; justify-content: center; align-items: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    z-index: 1000;
+}
+#main-menu h1 { font-size: 3rem; margin-bottom: 20px; text-shadow: 2px 2px 4px #000; }
+.menu-btn {
+    padding: 20px 40px; margin: 10px; font-size: 1.5rem; border: none; border-radius: 10px;
+    cursor: pointer; transition: transform 0.2s; font-weight: bold; min-width: 300px;
+}
+.menu-btn:hover { transform: scale(1.05); }
+.btn-mod1 { background: #ff4757; color: white; }
+.btn-mod2 { background: #2ed573; color: white; }
+
+/* Botón Volver */
+.btn-back {
+    position: absolute; top: 20px; left: 20px; padding: 12px 24px;
+    background: #ff6b81; color: white; border: none; border-radius: 5px;
+    cursor: pointer; z-index: 200; font-weight: bold; font-size: 16px;
+}
+
+/* Paneles de Información y Controles */
+.panel {
+    position: absolute; background: rgba(0,0,0,0.85); padding: 15px;
+    border-radius: 8px; z-index: 100; max-width: 320px; border: 1px solid #444;
+}
+#info-mod1, #info-mod2 { top: 80px; left: 20px; }
+#controles-mod1, #controles-mod2 { top: 80px; right: 20px; width: 300px; }
+
+.panel h2 { margin-bottom: 10px; color: #ffeb3b; font-size: 1.2rem; }
+.panel p { margin: 5px 0; font-size: 0.9rem; }
+
+/* Botones de Acción */
+.btn-action {
+    margin: 5px 0; padding: 12px; cursor: pointer; border: none; border-radius: 4px;
+    font-weight: bold; width: 100%; font-size: 0.9rem; transition: opacity 0.2s;
+}
+.btn-action:hover { opacity: 0.8; }
+.btn-positivo { background: #ff3333; color: white; }
+.btn-negativo { background: #3333ff; color: white; }
+.btn-limpiar { background: #666; color: white; }
+.btn-campo { background: #33cc33; color: white; }
+
+/* Controles del Módulo 2 (Sliders) */
+.control-group { margin-bottom: 12px; padding-bottom: 10px; border-bottom: 1px solid #444; }
+.control-group:last-child { border-bottom: none; }
+.control-group label { display: block; margin-bottom: 5px; font-weight: bold; font-size: 0.85rem; }
+.control-row { display: flex; align-items: center; gap: 8px; }
+.control-row input[type=range] { flex: 1; height: 6px; }
+.control-row input[type=number] {
+    width: 80px; padding: 4px 6px; background: #222; color: #00ff00;
+    border: 1px solid #555; border-radius: 4px; font-size: 0.85rem; font-weight: bold;
+}
+.unit { font-size: 0.75rem; color: #aaa; min-width: 30px; }
+
+/* Textos de valores */
+.valor { color: #00ff00; font-weight: bold; }
+.valor-grande { color: #00ff00; font-weight: bold; font-size: 1.1rem; }

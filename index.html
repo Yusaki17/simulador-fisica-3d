@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulador de Física 2</title>
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main-menu">
+        <h1>⚡ Simulador 3D de Física</h1>
+        <button class="menu-btn btn-mod1" onclick="cargarModulo(1)">🔴 Módulo 1: Cargas y Campos</button>
+        <button class="menu-btn btn-mod2" onclick="cargarModulo(2)">🔋 Módulo 2: Capacitores</button>
+    </div>
+
+    <section id="modulo1" class="hidden">
+        <button class="btn-back" onclick="volverMenu()">⬅ Volver</button>
+        <div id="info-mod1" class="panel">
+            <h2>⚡ Módulo 1</h2>
+            <p>️ Izq: Rotar | Der: Mover cargas</p>
+            <p>Cargas: <span id="contador" class="valor">0</span></p>
+        </div>
+        <div id="controles-mod1" class="panel">
+            <button class="btn-action btn-positivo" onclick="agregarCarga(1)">+ Positiva</button>
+            <button class="btn-action btn-negativo" onclick="agregarCarga(-1)">- Negativa</button>
+            <button class="btn-action btn-campo" onclick="toggleCampo()">📊 Campo</button>
+            <button class="btn-action btn-limpiar" onclick="limpiarTodo()">🗑️ Limpiar</button>
+        </div>
+    </section>
+
+    <section id="modulo2" class="hidden">
+        <button class="btn-back" onclick="volverMenu()">⬅ Volver</button>
+        <div id="info-mod2" class="panel">
+            <h2>🔋 Módulo 2</h2>
+            <p>C: <span id="val-C" class="valor-grande">0 pF</span></p>
+            <p>U: <span id="val-U" class="valor-grande">0 nJ</span></p>
+            <p>Q: <span id="val-Q" class="valor-grande">0 nC</span></p>
+        </div>
+        <div id="controles-mod2" class="panel">
+            <div class="control-group">
+                <label>📐 Área (A):</label>
+                <div class="control-row"><input type="range" id="slider-A" min="0.1" max="30" step="0.1" value="1.0"><input type="number" id="input-A" value="1.0"><span class="unit">m²</span></div>
+            </div>
+            <div class="control-group">
+                <label>📏 Distancia (d):</label>
+                <div class="control-row"><input type="range" id="slider-d" min="0.1" max="100" step="0.1" value="5.0"><input type="number" id="input-d" value="5.0"><span class="unit">mm</span></div>
+            </div>
+            <div class="control-group">
+                <label>🧪 Dieléctrico (K):</label>
+                <div class="control-row"><input type="range" id="slider-K" min="1" max="100" step="0.5" value="1.0"><input type="number" id="input-K" value="1.0"><span class="unit"></span></div>
+            </div>
+            <div class="control-group">
+                <label>⚡ Voltaje (V):</label>
+                <div class="control-row"><input type="range" id="slider-V" min="1" max="100000" step="1" value="100"><input type="number" id="input-V" value="100"><span class="unit">V</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Importmap para Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <!-- Enlace al archivo JS como módulo -->
+    <script type="module" src="script.js"></script>
+
+</body>
+</html>
